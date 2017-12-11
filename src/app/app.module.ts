@@ -1,18 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {DumpComponent} from './dump/dump.component';
+import {NgxElectronModule} from 'ngx-electron';
+import {ClipboardService} from './clipboard.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DumpComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxElectronModule
   ],
-  providers: [],
+  providers: [ClipboardService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
